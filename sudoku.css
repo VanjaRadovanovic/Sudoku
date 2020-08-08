@@ -1,0 +1,441 @@
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* GAME ---------------------------------------------*/
+
+.game-container {
+  width: 458px;
+  height: 458px;
+  background-color: #EBEBEB;
+  justify-self: center;
+  border: 2px solid #999999;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr auto;
+  user-select: none;
+  z-index: 1;
+}
+
+#screen-view {
+  display: grid;
+}
+
+.block {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  font-size: 23px;
+}
+
+.border-last-cloumn {
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.border-last-block {
+  border-right: 1px solid #EBEBEB;
+}
+
+.border-every-else-block {
+  border-right: 1px solid #EBEBEB;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.border-right-block-dark {
+  border-right: 1px solid #999999;
+}
+
+.border-bottom-block-black {
+  border-bottom: 1px solid #999999;
+}
+
+.generated-numbers {
+  background-color: #F5F5F5;
+  color: #666666;
+}
+
+.selected-field {
+  background-color: #D9EEFA;
+}
+
+.selected-number-right {
+  color: #1197DD;
+}
+
+.selected-number-wrong {
+  color: white;
+  background-color: #FF8C8C;
+}
+
+.selected-button-wrong-side-blocks {
+  color: #E2565C;
+  background-color: #FACFCF;
+}
+
+.selected-generated-number-field {
+  background-color: #D0E6F1;
+}
+
+.hinted-number {
+  background-color: #FFFF8D;
+  color: #666666;
+}
+
+.notes-container {
+  width: 50px;
+  height: 50px;
+  font-size: 7px;
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.number {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+/* ALERTERS ----------------------------------------------------------*/
+/* ALERT TIME --------------------------------------------------------*/
+
+#alert-time {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  width: 460px;
+  height: 460px;
+  background-color: white;
+  align-self: center;
+  justify-self: center;
+  margin-top: -26px;
+  border: 1px solid #CCCCCC;
+  align-items: center;
+  justify-items: center;
+}
+
+.bg-animation {
+  animation-name: transition-bg;
+  animation-duration: 100ms;
+  animation-iteration-count: 1;
+}
+
+@keyframes transition-bg {
+  0% {
+    background-color: transparent;
+  }
+
+  100% {
+    background-color: white;
+  }
+}
+
+#alert-time>div {
+  display: grid;
+}
+
+#countinue-button {
+  height: 40px;
+  font-size: 15px;
+  align-self: center;
+  border: none;
+  background-color: #ECECEC;
+  cursor: pointer;
+}
+
+/* ALERT GAME CHANGES ------------------------------------------------*/
+
+#alert-game-changes {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  width: 460px;
+  height: 460px;
+  background-color: rgba(0, 0, 0, .7);
+  align-self: center;
+  justify-self: center;
+  margin-top: -26px;
+  border: 1px solid #CCCCCC;
+  align-items: center;
+  justify-items: center;
+}
+
+#alert-game-changes>div {
+  width: 270px;
+  height: 140px;
+  background-color: white;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+#alert-game-changes>div>div {
+  display: grid;
+  background-color: white;
+
+}
+
+#alert-game-changes>div>div>div {
+  display: flex;
+  justify-content: space-around;
+}
+
+#alert-game-changes>div>div>div>button {
+  border: none;
+  width: 100px;
+  height: 40px;
+}
+
+#alert-note-game-changes {
+  margin-top: 4px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+#new-game-button {
+  background-color: #de5b5f;
+  color: white;
+}
+
+/* ALERTER GAME WON --------------------------------------------------*/
+
+#alert-game-won {
+  position: absolute;
+  z-index: 3;
+  width: 460px;
+  height: 460px;
+  background-color: rgba(0, 0, 0, .7);
+  align-self: center;
+  justify-self: center;
+  margin-top: -26px;
+  border: 1px solid #CCCCCC;
+  align-items: center;
+  justify-items: center;
+  display: none;
+  align-content: center;
+  justify-content: center;
+  animation-name: game-won-animation;
+  animation-iteration-count: 1;
+  animation-duration: 1500ms;
+}
+
+@keyframes game-won-animation {
+  0% {
+    display: none;
+    background-color: transparent;
+  }
+
+  100% {
+    display: grid;
+    background-color: rgba(0, 0, 0, .7);
+  }
+}
+
+#alert-game-won>div {
+  width: 200px;
+  height: 125px;
+  background-color: white;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-content: center;
+  justify-content: center;
+}
+
+#alert-game-won>div>button {
+  width: 200px;
+  height: 50px;
+  border: none;
+  background-color: #ECECEC;
+}
+
+#alert-game-won>div>p {
+  text-align: center;
+  margin: 3px;
+}
+
+#game-won-text {
+  align-self: end;
+}
+
+#time-spent {
+  align-self: start;
+}
+
+/* COMMANDS  UP ------------------------------------------------------*/
+
+.up-commands {
+  width: 455px;
+  height: 35px;
+  margin-top: 50px;
+  color: #666666;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+#time {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-self: start;
+  color: #1197DD;
+  cursor: pointer;
+}
+
+#pouse-button>i {
+  font-size: 25px;
+}
+
+#time-display {
+  align-self: end;
+  font-size: 18px;
+}
+
+#difficulty-buttons>button {
+  border: none;
+  color: #999999;
+  background-color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#difficulty-buttons>button:hover {
+  color: #666666;
+}
+
+#game-changing-commands {
+  justify-self: end;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#game-changing-commands>div:hover {
+  color: black;
+}
+
+#restart-button>i {
+  font-size: 20px;
+  align-self: center;
+}
+
+#restart-button {
+  display: flex;
+  align-items: center;
+}
+
+#next-game-button {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 11px;
+  border-left: 1px solid #E0E0E0;
+  height: 35px;
+}
+
+/* COMMANDS  DOWN ----------------------------------------------------*/
+/* COMMANDS---------------------------------------------------------- */
+
+#down-commands {
+  width: 462px;
+  height: 60px;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 10px;
+  margin-top: 1px;
+  user-select: none;
+}
+
+#down-commands>div {
+  display: grid;
+  justify-items: center;
+  height: 38px;
+  cursor: pointer;
+  color: #666666;
+}
+
+#down-commands>div:hover {
+  color: black;
+}
+
+.command-down-icons {
+  font-size: 23px;
+  width: auto;
+  height: 24px;
+  justify-self: center;
+}
+
+.command-discription {
+  margin: 0;
+  align-self: end;
+}
+
+#eraser>i,
+#notes>i {
+  width: 24px;
+}
+
+#number-of-hints-left {
+  position: absolute;
+  align-self: start;
+  justify-self: end;
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+  color: white;
+  background-color: rgba(255, 0, 0, .9);
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+#off-light {
+  position: absolute;
+  display: none;
+}
+
+#on-light {
+  display: block;
+}
+
+/* NUMBERS -----------------------------------------------------------*/
+
+#number-selector {
+  width: 462px;
+  height: 50px;
+  justify-self: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.number-selector-button {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(240, 240, 240, .2);
+  align-self: center;
+  border: 1px solid #999999;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: not-allowed;
+}
+
+.number-selector-button:hover {
+  color: #1197DD;
+  border-color: #1197DD;
+}

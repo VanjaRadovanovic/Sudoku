@@ -1,0 +1,86 @@
+<html>
+
+<head>
+  <title>Sudoku</title>
+  <link rel="stylesheet" href="sudoku.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/950d22d325.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="icofont.min.css">
+</head>
+
+<body>
+  <h1>Sudoku</h1>
+  <div id="screen-view">
+    <div class="up-commands">
+      <div id="time">
+        <div id="pouse-button"><i class="far fa-pause-circle"></i></div>
+        <div id="time-display">0:00</div>
+      </div>
+      <div id="difficulty-buttons">
+        <button class="difficulty-buttons" id="easy">EASY</button>
+        <button class="difficulty-buttons" id="midium">MIDIUM</button>
+        <button class="difficulty-buttons" id="hard">HARD</button>
+      </div>
+      <div id="game-changing-commands">
+        <div id="restart-button"><i class="fas fa-undo"></i></div>
+        <div id="next-game-button"><i class="fas fa-forward"></i></div>
+      </div>
+    </div>
+    <div id="alert-game-won">
+      <div>
+        <p id="game-won-text">Game won</p>
+        <p id="time-spent">time: 15:25</p>
+        <button id="game-won-button">NEXT GAME</button>
+      </div>
+    </div>
+    <div id="alert-time">
+      <div>
+        <p id="alert-notes">Game is poused</p>
+        <button id="countinue-button">CONTINUE</button>
+      </div>
+    </div>
+    <div id="alert-game-changes">
+      <div id="bg-alert-content">
+        <div>
+          <p id="alert-note-game-changes">Are you sure? All current game progress will be lost.</p>
+          <div>
+            <button id="continue-button-game-changes">CONTINUE</button>
+            <button id="new-game-button">NEW GAME</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="game-container">
+    </div>
+    <div id="down-commands">
+      <div id="eraser" class="down-command-buttons"><i class="fas fa-eraser command-down-icons"></i>
+        <p class="command-discription">eraser</p>
+      </div>
+      <div id="hint" class="down-command-buttons">
+        <div id="number-of-hints-left">3</div>
+        <img src="idea1.png" class="command-down-icons" id="on-light">
+        <img src="idea.ico" class="command-down-icons" id="off-light">
+        <p class="command-discription">hint</p>
+      </div>
+      <div id="notes" class="down-command-buttons"><i class="fas fa-th command-down-icons"></i>
+        <p class="command-discription">notes</p>
+      </div>
+    </div>
+    <div id="number-selector">
+      <button class="number-selector-button" id="1">1</button>
+      <button class="number-selector-button" id="2">2</button>
+      <button class="number-selector-button" id="3">3</button>
+      <button class="number-selector-button" id="4">4</button>
+      <button class="number-selector-button" id="5">5</button>
+      <button class="number-selector-button" id="6">6</button>
+      <button class="number-selector-button" id="7">7</button>
+      <button class="number-selector-button" id="8">8</button>
+      <button class="number-selector-button" id="9">9</button>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript" src="sudokuGenerator.js"></script>
+<script type="text/javascript" src="sudoku.js"></script>
+
+</html>
