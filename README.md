@@ -1,1 +1,1 @@
-# Sudoku
+# This is my version of Sudoku made with vanilla js, html and css
