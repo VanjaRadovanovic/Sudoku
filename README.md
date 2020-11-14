@@ -1,2 +1,2 @@
 # This is my version of Sudoku made with vanilla js
-url: https://vr-sudoku.herokuapp.com/
+url: https://vr-softdev.kreda.hr/sudoku/
